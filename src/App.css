@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    .barTop {
+        height: 100px;
+        width: 100vw;
+        background: white;
+    }
+    
+    .menuHolder {
+        padding: 50px;
+        background: #f2f2ef;
+        display: flex;
+        flex-flow: row nowrap;
+        font-family: Arial!important;
+        min-height: 500px;
+    }
+    
+    .mainPanel {
+        width: 150px;
+        background: white;
+        padding: 20px;
+        display: flex;
+        flex-flow: column nowrap;
+        position: relative;
+    }
+    
+    .mainPanel div {
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    
+    .mainPanel div a {
+        text-decoration: none;
+        color: #606060;
+    }
+    
+    .mainPanel a:hover {
+        border-bottom: 1px #606060 solid;
+    }
+    
+    .mainPanel .active {
+        border-bottom: 1px #606060 solid;
+    }
+    
+    .secondPanel {
+        background: white;
+        margin-left: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+    }
+    
+    .secondPanel .menuColumn {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        padding: 20px;
+        position: relative;
+        width: 500px;
+    }
+    
+    .secondPanel .menuColumn .menuContent {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .secondPanel .menuColumn div {
+        margin-bottom: 15px;
+        width: 40%;
+    }
+    
+    .secondPanel .menuColumn div a {
+        font-size: 15px;
+        text-decoration: none;
+        color: #606060;
+    }
+    
+    .secondPanel .menuColumn div a:hover {
+        border-bottom: 1px #606060 solid;
+    }
+    
+    .secondPanel .imageColumn {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        background-size: cover;
+    }
+    
+    .buttonStyle {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 5px 20px;
+        border: #606060 solid 1px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #606060;
+    }
+    
+    .buttonStyle:hover {
+        text-decoration: underline;
+    }
+    
+    @media all and (max-width: 750px) {
+        .menuHolder {
+            flex-flow: row wrap;
+        }
+        .mainPanel {
+            width: 100%;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        .mainPanel div {
+            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+        .secondPanel {
+            margin-left: 0px;
+            flex-flow: column nowrap;
+            margin-top: 15px;
+        }
+        .secondPanel .menuColumn {
+            width: auto;
+            flex-flow: column wrap;
+        }
+        .secondPanel .imageColumn {
+            height: 30vh;
+        }
+        .buttonStyle {
+            display: none;
+        }
+    }
+    
+    @media all and (max-width: 460px) {
+        .secondPanel .menuColumn .menuContent {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            width: auto;
+        }
+        .secondPanel .menuColumn div {
+            margin-bottom: 25px;
+            width: 100%;
+            text-align: center;
+        }
+        .secondPanel .menuColumn div:last-child {
+            margin-bottom: 0;
+        }
+    }
